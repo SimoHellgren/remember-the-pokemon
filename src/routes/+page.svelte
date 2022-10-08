@@ -28,6 +28,10 @@
 <div class="controls">
 	<input bind:value={guess} placeholder="type here" />
 	<button on:click={toggleHints}>{hints ? 'Hints on' : 'Hints off'}</button>
+	<label>
+		Progress: {pokemon.filter((p) => p.solved).length} / {pokemon.length}
+		<progress value={pokemon.filter((p) => p.solved).length} max={pokemon.length} /></label
+	>
 </div>
 
 <div class="container">
