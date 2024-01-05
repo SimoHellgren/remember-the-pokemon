@@ -1,15 +1,10 @@
 export async function load({ fetch }) {
-  let response = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=151")
+  let response = await fetch("https://pokeapi.co/api/v2/generation")
   let data = await response.json()
 
-  let pokemon = await data.results
+  let generations = await data.results
 
-  // preprocess certain names
-  pokemon = pokemon
-    .map(p => p.name.includes("nidoran") ? { ...p, name: "nidoran" } : p)
-    .map(p => p.name === "mr-mime" ? { ...p, name: "mr mime" } : p)
+  generations = generations.map(g => parseInt(g.url.split("/").slice(-2, -1)[0])).sort()
 
-  return {
-    pokemon
-  }
+  return { generations }
 }
