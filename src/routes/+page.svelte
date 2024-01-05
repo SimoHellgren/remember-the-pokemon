@@ -12,7 +12,7 @@
 
 	let guess = '';
 	$: {
-		let match = pokemon.find((p) => p.name === guess.toLowerCase());
+		let match = pokemon.find((p) => p.name === guess.toLowerCase() && !p.solved);
 		if (match) {
 			pokemon = pokemon.map((p) => (p.id === match.id ? { ...match, solved: true } : p));
 			guess = '';
