@@ -25,8 +25,11 @@
 	};
 </script>
 
-<input bind:value={guess} placeholder="type here" />
-<button on:click={toggleHints}>{hints ? 'Hints on' : 'Hints off'}</button>
+<div class="controls">
+	<input bind:value={guess} placeholder="type here" />
+	<button on:click={toggleHints}>{hints ? 'Hints on' : 'Hints off'}</button>
+</div>
+
 <div class="container">
 	{#each pokemon as pokeman}
 		<Pokemon
@@ -40,7 +43,17 @@
 </div>
 
 <style>
+	.controls {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 3rem;
+		width: 100%;
+		background-color: #ffffff;
+		display: inline;
+	}
 	.container {
+		margin-top: 3rem;
 		display: flex;
 		flex-wrap: wrap;
 	}
