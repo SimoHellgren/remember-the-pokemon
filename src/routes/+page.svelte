@@ -4,7 +4,7 @@
 	let hints = false;
 
 	let elapsed = 0;
-	setInterval(() => elapsed++, 1000);
+	let timer = setInterval(() => elapsed++, 1000);
 
 	$: minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
 	$: seconds = String(elapsed % 60).padStart(2, '0');
@@ -15,6 +15,13 @@
 		hint: false,
 		solved: false
 	}));
+
+	$: total = pokemon.length;
+	$: guessed = pokemon.filter((p) => p.solved).length;
+
+	$: {
+		if (guessed >= total) clearInterval(timer);
+	}
 
 	let guess = '';
 	$: {
@@ -35,9 +42,9 @@
 	<input autofocus bind:value={guess} placeholder="type here" />
 	<button on:click={toggleHints}>{hints ? 'Hints on' : 'Hints off'}</button>
 	<label>
-		Progress: {pokemon.filter((p) => p.solved).length} / {pokemon.length}
-		<progress value={pokemon.filter((p) => p.solved).length} max={pokemon.length} /></label
-	>
+		Progress: {guessed} / {total}
+		<progress value={guessed} max={total} />
+	</label>
 	<span>Time elapsed: {minutes}:{seconds}</span>
 </div>
 
