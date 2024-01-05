@@ -18,7 +18,6 @@
 		{/if}
 	{:else}
 		<img src={image} alt={name} />
-		<p>#{id} {name.toUpperCase()}</p>
 	{/if}
 </div>
 
