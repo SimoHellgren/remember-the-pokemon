@@ -3,6 +3,12 @@
 	export let data;
 	let hints = false;
 
+	let elapsed = 0;
+	setInterval(() => elapsed++, 1000);
+
+	$: minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
+	$: seconds = String(elapsed % 60).padStart(2, '0');
+
 	let pokemon = data.pokemon.map((row, i) => ({
 		id: i + 1,
 		name: row.name,
@@ -32,6 +38,7 @@
 		Progress: {pokemon.filter((p) => p.solved).length} / {pokemon.length}
 		<progress value={pokemon.filter((p) => p.solved).length} max={pokemon.length} /></label
 	>
+	<span>Time elapsed: {minutes}:{seconds}</span>
 </div>
 
 <div class="container">
