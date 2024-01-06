@@ -9,9 +9,9 @@
 	$: minutes = String(Math.floor(elapsed / 60)).padStart(2, '0');
 	$: seconds = String(elapsed % 60).padStart(2, '0');
 
-	let pokemon = data.pokemon.map((row, i) => ({
-		id: row.id,
-		name: row.name,
+	let pokemon = data.pokemon.map((p) => ({
+		id: p.id,
+		name: p.name,
 		hint: false,
 		solved: false
 	}));
