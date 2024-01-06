@@ -47,6 +47,14 @@
 		<progress value={guessed} max={total} />
 	</label>
 	<span>Time elapsed: {minutes}:{seconds}</span>
+	<span>
+		Choose gen:
+		<nav>
+			{#each [1, 2, 3, 4, 5, 6, 7, 8, 9] as gen}
+				<a href={`gen${gen}`} data-sveltekit-reload>{gen}</a>
+			{/each}
+		</nav>
+	</span>
 </div>
 
 <div class="container">
@@ -65,16 +73,33 @@
 	.controls {
 		position: fixed;
 		left: 0;
-		top: 3rem;
-		height: 3rem;
+		top: 0;
+		padding-top: 0.5rem;
+		padding-left: 0.5rem;
+		height: 2rem;
 		width: 100%;
 		background-color: #ffffff;
 		display: inline;
 	}
 	.container {
-		margin-top: 6rem;
+		margin-top: 3rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
+	}
+
+	nav {
+		display: inline;
+	}
+
+	a {
+		background-color: #ebb5e6;
+		border: 1px solid #b885b4;
+		border-radius: 3px;
+		padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+		margin: 0.1rem;
+		text-align: center;
+		width: fit-content;
+		text-decoration: none;
 	}
 </style>
