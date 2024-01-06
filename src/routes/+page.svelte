@@ -1,21 +1,8 @@
 <script>
-	export let data;
-</script>
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
-<h1>Remember the Pokémon?</h1>
-
-<h2>Pick a generation:</h2>
-<ul>
-	{#each data.generations as generation}
-		<li>
-			<a href={`gen${generation}`}>Gen {generation}</a>
-		</li>
-	{/each}
-</ul>
-
-<style>
-	li {
-		list-style-type: none;
-		padding: 0.5rem;
+	if (browser) {
+		goto('/gen1');
 	}
-</style>
+</script>
