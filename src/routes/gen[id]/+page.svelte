@@ -1,7 +1,6 @@
 <script>
 	import Pokemon from '../Pokemon.svelte';
 	export let data;
-	let hints = false;
 
 	let elapsed = 0;
 	let timer = setInterval(() => elapsed++, 1000);
@@ -15,6 +14,10 @@
 		hint: false,
 		solved: false
 	}));
+
+	let hints = false;
+	const setHints = (hints) => pokemon.map((p) => ({ ...p, hint: hints }));
+	$: pokemon = setHints(hints);
 
 	$: total = pokemon.length;
 	$: guessed = pokemon.filter((p) => p.solved).length;
@@ -31,16 +34,14 @@
 			guess = '';
 		}
 	}
-
-	const toggleHints = () => {
-		hints = !hints;
-		pokemon = pokemon.map((p) => ({ ...p, hint: hints }));
-	};
 </script>
 
 <div class="controls">
 	<input autofocus bind:value={guess} placeholder="type here" />
-	<button on:click={toggleHints}>{hints ? 'Hints on' : 'Hints off'}</button>
+	<label>
+		Show all hints:
+		<input type="checkbox" bind:checked={hints} />
+	</label>
 	<label>
 		Progress: {guessed} / {total}
 		<progress value={guessed} max={total} />
