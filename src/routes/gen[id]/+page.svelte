@@ -65,14 +65,14 @@
 	.controls {
 		position: fixed;
 		left: 0;
-		top: 0;
+		top: 3rem;
 		height: 3rem;
 		width: 100%;
 		background-color: #ffffff;
 		display: inline;
 	}
 	.container {
-		margin-top: 3rem;
+		margin-top: 6rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
