@@ -51,7 +51,7 @@
 		Choose gen:
 		<nav>
 			{#each [1, 2, 3, 4, 5, 6, 7, 8, 9] as gen}
-				<a href={`gen${gen}`} data-sveltekit-reload>{gen}</a>
+				<a href={`/gen${gen}`} data-sveltekit-reload>{gen}</a>
 			{/each}
 		</nav>
 	</span>
