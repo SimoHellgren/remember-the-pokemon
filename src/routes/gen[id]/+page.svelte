@@ -92,7 +92,6 @@
 	:root {
 		--animation-duration: 300ms;
 		font-family: 'Pokemon';
-		font-size: 11px;
 	}
 
 	nav {
@@ -105,6 +104,7 @@
 		height: 2rem;
 		transition: width var(--animation-duration) ease,
 			background-color var(--animation-duration) ease, border-style var(--animation-duration) ease;
+		font-size: 12px;
 	}
 
 	nav span {
@@ -174,6 +174,7 @@
 		display: flex;
 		align-items: center;
 		column-gap: 0.3rem;
+		font-size: 12px;
 	}
 
 	progress {
@@ -182,7 +183,8 @@
 
 	input {
 		font-family: inherit;
-		font-size: 9px;
+		font-size: 10px;
+		padding: 3px;
 	}
 
 	input[type='checkbox'] {
