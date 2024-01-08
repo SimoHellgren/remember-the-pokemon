@@ -84,8 +84,15 @@
 </div>
 
 <style>
+	@font-face {
+		font-family: 'Pokemon';
+		src: url('/fonts/PKMN RBYGSC.ttf');
+	}
+
 	:root {
 		--animation-duration: 300ms;
+		font-family: 'Pokemon';
+		font-size: 11px;
 	}
 
 	nav {
@@ -121,7 +128,7 @@
 	nav:hover {
 		background-color: #fefefe;
 		border-style: double;
-		width: 5rem;
+		width: 7rem;
 		height: fit-content;
 	}
 
@@ -167,6 +174,11 @@
 
 	progress {
 		width: 6em;
+	}
+
+	input {
+		font-family: inherit;
+		font-size: 9px;
 	}
 
 	input[type='checkbox'] {
