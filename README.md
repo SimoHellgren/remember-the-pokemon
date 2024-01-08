@@ -1,5 +1,5 @@
 # Remember the Pokémon?
-A game for testing whether you remember the Pokémon!
+A game for testing whether you remember the Pokémon! You can try it out [here](http://remember-the-pokemon.s3-website-eu-west-1.amazonaws.com/). For best experience, use a non-mobile device (laptop, desktop).
 
 Built with SvelteKit.
 
