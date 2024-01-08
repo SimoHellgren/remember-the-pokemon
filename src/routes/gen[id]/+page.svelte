@@ -50,16 +50,16 @@
 			{/each}
 		</ul>
 	</nav>
-	<input autofocus bind:value={guess} placeholder="type here" />
+	<input autofocus bind:value={guess} placeholder="type here" size="10" />
 	<label>
-		Show all hints:
+		Hints:
 		<input type="checkbox" bind:checked={hints} />
 	</label>
 	<label>
 		Progress: {guessed} / {total}
 		<progress value={guessed} max={total} />
 	</label>
-	<span>Time elapsed: {minutes}:{seconds}</span>
+	<span>Time: {minutes}:{seconds}</span>
 </div>
 
 <div class="container">
@@ -154,6 +154,10 @@
 		display: flex;
 		align-items: center;
 		column-gap: 0.3rem;
+	}
+
+	progress {
+		width: 6em;
 	}
 
 	.container {
