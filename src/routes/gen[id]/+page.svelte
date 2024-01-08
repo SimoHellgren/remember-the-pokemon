@@ -147,6 +147,10 @@
 		gap: 0.5rem;
 	}
 
+	li {
+		white-space: nowrap;
+	}
+
 	a {
 		text-decoration: none;
 	}
