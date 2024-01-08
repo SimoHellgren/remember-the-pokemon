@@ -1,6 +1,6 @@
 {
-	"name": "remember-the-things",
-	"version": "0.0.1",
+	"name": "remember-the-pokemon",
+	"version": "1.0.0",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
