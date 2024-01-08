@@ -169,6 +169,13 @@
 		width: 6em;
 	}
 
+	input[type='checkbox'] {
+		vertical-align: middle;
+		position: relative;
+		bottom: 0.05rem;
+		margin-left: 0;
+	}
+
 	.container {
 		margin-top: 3rem;
 		display: flex;
