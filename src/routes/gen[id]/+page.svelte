@@ -34,7 +34,16 @@
 			guess = '';
 		}
 	}
+
+	function selectGuessInput(event) {
+		if (event.ctrlKey && event.key === 'f') {
+			event.preventDefault();
+			document.getElementById('guessInput').focus();
+		}
+	}
 </script>
+
+<svelte:window on:keydown={selectGuessInput} />
 
 <div class="controls">
 	<nav>
@@ -50,7 +59,7 @@
 			{/each}
 		</ul>
 	</nav>
-	<input autofocus bind:value={guess} placeholder="type here" size="10" />
+	<input id="guessInput" autofocus bind:value={guess} placeholder="type here" size="10" />
 	<label>
 		Hints:
 		<input type="checkbox" bind:checked={hints} />
