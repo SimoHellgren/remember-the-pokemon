@@ -14,5 +14,5 @@ export async function load({ fetch, params }) {
         .map(p => p.name.includes("nidoran") ? { ...p, name: "nidoran" } : p)
         .map(p => p.name === "mr-mime" ? { ...p, name: "mr mime" } : p)
 
-    return { pokemon }
+    return { pokemon, gen: params.id }
 }

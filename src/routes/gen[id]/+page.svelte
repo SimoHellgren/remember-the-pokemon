@@ -43,6 +43,9 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Remember the Pokémon - Gen {data.gen}</title>
+</svelte:head>
 <svelte:window on:keydown={selectGuessInput} />
 
 <div class="controls">
@@ -121,15 +124,16 @@
 		display: inline-block;
 		width: 2rem;
 		height: 2rem;
-		transform: rotate(0deg);
 		transition: transform var(--animation-duration) ease;
 	}
 
 	nav:hover {
 		background-color: #fefefe;
 		border-style: double;
-		width: 7rem;
+		width: fit-content;
 		height: fit-content;
+		padding-left: 0.7rem;
+		padding-right: 0.7rem;
 	}
 
 	nav:hover img {
