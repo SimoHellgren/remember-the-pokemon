@@ -28,7 +28,7 @@
 
 	let guess = '';
 	$: {
-		let match = pokemon.find((p) => p.name === guess.toLowerCase() && !p.solved);
+		let match = pokemon.find((p) => p.name === guess.toLowerCase().trim() && !p.solved);
 		if (match) {
 			pokemon = pokemon.map((p) => (p.id === match.id ? { ...match, solved: true } : p));
 			guess = '';
@@ -130,7 +130,7 @@
 	nav:hover {
 		background-color: #fefefe;
 		border-style: double;
-		width: fit-content;
+		width: 5rem;
 		height: fit-content;
 		padding-left: 0.7rem;
 		padding-right: 0.7rem;
